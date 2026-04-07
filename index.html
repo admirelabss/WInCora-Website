@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NexCore | Tech Agency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-dim": "#00b3e9",
+                        "surface-tint": "#6dddff",
+                        "primary": "#6dddff",
+                        "on-tertiary-fixed-variant": "#003388",
+                        "surface-container-high": "#181f33",
+                        "on-surface": "#e1e4fa",
+                        "on-tertiary": "#002363",
+                        "surface-container-low": "#0d1323",
+                        "primary-container": "#00d2fd",
+                        "tertiary-container": "#6f94fa",
+                        "outline": "#707588",
+                        "tertiary": "#82a3ff",
+                        "on-error-container": "#ffa8a3",
+                        "error": "#ff716c",
+                        "on-secondary-container": "#f1f9ff",
+                        "primary-fixed": "#00d2fd",
+                        "inverse-on-surface": "#505466",
+                        "secondary-container": "#006687",
+                        "on-tertiary-fixed": "#001442",
+                        "secondary-fixed": "#94dbff",
+                        "on-surface-variant": "#a6aabf",
+                        "background": "#090e1c",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container": "#13192b",
+                        "tertiary-dim": "#759aff",
+                        "error-container": "#9f0519",
+                        "on-primary": "#004c5e",
+                        "on-primary-container": "#004352",
+                        "primary-fixed-dim": "#00c3eb",
+                        "surface-dim": "#090e1c",
+                        "secondary": "#03c1fb",
+                        "on-background": "#e1e4fa",
+                        "outline-variant": "#434759",
+                        "surface": "#090e1c",
+                        "tertiary-fixed-dim": "#7da0ff",
+                        "surface-bright": "#242b43",
+                        "secondary-fixed-dim": "#67cfff",
+                        "on-primary-fixed": "#002c37",
+                        "error-dim": "#d7383b",
+                        "primary-dim": "#00c3eb",
+                        "on-secondary-fixed-variant": "#005774",
+                        "tertiary-fixed": "#92aeff",
+                        "surface-variant": "#1e253b",
+                        "on-tertiary-container": "#001747",
+                        "surface-container-highest": "#1e253b",
+                        "inverse-primary": "#00687e",
+                        "on-primary-fixed-variant": "#004c5d",
+                        "surface-container-lowest": "#000000",
+                        "on-secondary-fixed": "#00394d",
+                        "on-error": "#490006",
+                        "on-secondary": "#00374b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(30, 37, 59, 0.4);
+            backdrop-filter: blur(20px);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 0%, rgba(9, 14, 28, 1) 70%);
+        }
+        .glow-accent {
+            box-shadow: 0px 20px 40px rgba(0, 212, 255, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden">
+<!-- 1. Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1E253B]/40 backdrop-blur-xl shadow-[0px_20px_40px_rgba(0,212,255,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-white">NexCore</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-300 hover:text-cyan-400 transition-colors" href="#">Services</a>
+<a class="text-slate-300 hover:text-cyan-400 transition-colors" href="#">Case Studies</a>
+<a class="text-slate-300 hover:text-cyan-400 transition-colors" href="#">Process</a>
+<a class="text-slate-300 hover:text-cyan-400 transition-colors" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-6 py-2.5 rounded-full scale-95 active:scale-90 transition-transform">
+                    Start a Project
+                </button>
+<button class="md:hidden text-white p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- 2. Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 hero-gradient">
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-tertiary/10 rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+<div>
+<span class="font-label text-primary tracking-widest uppercase text-sm mb-6 block">Future-Proofed Digital Solutions</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-white leading-tight mb-8 tracking-tighter">
+                    We Build Digital Products That <span class="text-primary">Move Markets</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl mb-10 max-w-xl leading-relaxed">
+                    Engineering bespoke AI-native applications, high-performance cloud architectures, and immersive digital experiences for the world's most ambitious brands.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold px-8 py-4 rounded-full transition-all hover:scale-105 active:scale-95 shadow-lg shadow-primary/20">
+                        Work with us
+                    </button>
+<button class="border border-outline-variant/20 text-primary px-8 py-4 rounded-full font-bold transition-all hover:bg-primary/10">
+                        View Case Studies
+                    </button>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="aspect-square glass-panel rounded-full overflow-hidden p-8 animate-pulse shadow-2xl">
+<div class="w-full h-full rounded-full border border-primary/20 flex items-center justify-center">
+<img alt="Digital core technology" class="w-4/5 h-4/5 object-cover rounded-full mix-blend-screen opacity-60" data-alt="Abstract glowing circuit patterns and holographic data projections on a dark metallic surface with deep cyan highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDVwsDGH8zVT-YAs6VxjpzpQOQHU4uxSSpdoPUU_NUf-NlinGWiu9NFtIrn90XQcFo5SxzGre3RgvrodDBBqtMHrsWFlZAlj6GPIVKhK-xn1aejXUYUU6j4GAYWhC-9ddSxDZAUvWGzbXO2Qoe6FYKy9RIPtXl21hf5qVxo3I9nFEmDfsWvTo3fJ5-VLrWkSaveYVnkbkXQGlFqFVj2KSBrmccVeDYaRrz4XF9-AOSQj4wh6DKBwoxSxfzNtN6MwC_ligTtU2b2Q"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted By Bar -->
+<div class="py-12 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center font-label text-outline text-xs uppercase tracking-[0.3em] mb-8">Trusted by 120+ Disruptive Tech Teams</p>
+<div class="flex flex-wrap justify-center gap-12 opacity-30 grayscale contrast-125">
+<span class="text-2xl font-bold font-headline">SKYNET</span>
+<span class="text-2xl font-bold font-headline">CYBERDYNE</span>
+<span class="text-2xl font-bold font-headline">OMNICORP</span>
+<span class="text-2xl font-bold font-headline">TYRELL</span>
+<span class="text-2xl font-bold font-headline">WAYLAND</span>
+</div>
+</div>
+</div>
+<!-- 3. Services Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-6 text-white">Full-Stack Expertise for the <span class="text-primary">Next Era</span></h2>
+<p class="text-on-surface-variant text-lg">We don't just ship code; we architect ecosystems. Our cross-functional teams bring technical precision to every layer of your product.</p>
+</div>
+<div class="hidden md:block h-[2px] flex-grow mx-12 bg-outline-variant/10"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">terminal</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Web Development</h3>
+<p class="text-on-surface-variant leading-relaxed">Scalable Next.js and React architectures built for speed, SEO, and seamless user flows.</p>
+</div>
+<!-- Service 2 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">smartphone</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Mobile Apps</h3>
+<p class="text-on-surface-variant leading-relaxed">Native performance with cross-platform efficiency using Flutter and React Native.</p>
+</div>
+<!-- Service 3 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">psychology</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">AI &amp; Automation</h3>
+<p class="text-on-surface-variant leading-relaxed">Integrating LLMs and custom machine learning models to automate core workflows.</p>
+</div>
+<!-- Service 4 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">layers</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">UI/UX Design</h3>
+<p class="text-on-surface-variant leading-relaxed">Human-centric design systems that balance aesthetic beauty with conversion metrics.</p>
+</div>
+<!-- Service 5 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">cloud</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Cloud &amp; DevOps</h3>
+<p class="text-on-surface-variant leading-relaxed">Reliable AWS/Azure infrastructure with automated CI/CD for zero-downtime shipping.</p>
+</div>
+<!-- Service 6 -->
+<div class="glass-panel p-10 rounded-xl transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-2 group">
+<div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary">insights</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-4 text-white">Product Strategy</h3>
+<p class="text-on-surface-variant leading-relaxed">Mapping your roadmap from MVP to global scale through data-driven insight.</p>
+</div>
+</div>
+</section>
+<!-- 4. Stats Bar -->
+<section class="bg-surface-container-low py-20 relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">120+</div>
+<div class="font-label text-primary text-sm uppercase tracking-widest">Active Clients</div>
+</div>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">300+</div>
+<div class="font-label text-primary text-sm uppercase tracking-widest">Projects Done</div>
+</div>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">8+</div>
+<div class="font-label text-primary text-sm uppercase tracking-widest">Years Experience</div>
+</div>
+<div>
+<div class="font-headline text-5xl font-bold text-white mb-2">98%</div>
+<div class="font-label text-primary text-sm uppercase tracking-widest">Satisfaction</div>
+</div>
+</div>
+</section>
+<!-- 5. Featured Work -->
+<section class="py-32 bg-background">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl md:text-5xl font-bold mb-16 text-white text-center">Selected <span class="text-primary">Works</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Case 1 -->
+<div class="relative group cursor-pointer lg:col-span-2 overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="FinTrack Dashboard" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="Modern fintech application dashboard featuring clean data visualization, neon blue line charts, and glassmorphism interface elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf1L8EIa5j2X_O8bx18oMzL75KgjghF5mQJgBjgohXeYK4VJzEEzhnxio_5Zag9IqUt9cQ0oZpFbUQzWIpCNKHqACsNiKdaospobkfjSt0iwUfFnfc95aR5RtEi7JPlRbFVbwfqZb2zRL0Xcs7zLvSsG_XPOxZY37M4zwkcHZs5aP-75ILeXgVE9p_P1r7WyY_30CsTkB84Y_qDoP3plvhJZvJXZJndL0ipWGyFa4-98LHwnMk-2xfT9FDIAaNRPrlwmsRwnzxZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-12 flex flex-col justify-end">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">FinTech</span>
+<span class="bg-white/10 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">2024</span>
+</div>
+<h3 class="font-headline text-4xl font-bold text-white mb-4">FinTrack Pro</h3>
+<p class="text-on-surface-variant max-w-xl text-lg">A revolutionary asset management platform that uses AI to predict market volatility with 94% accuracy.</p>
+</div>
+</div>
+<!-- Case 2 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="Lumo Health App" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="Health technology app interface on a mobile device showing biometric data tracking with soft glowing aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA55hiri8i-LNY-UtVx2Inb0Rmkz0zY4iAP_Sei0tn1WbILXcMI9q-SuGCB0-9BR1tWBgrjIokLWVEUaXFxx67nNiMyCCttLT6NPBRz2LNpAWSQCCFxmD2L4R8CtFBE9rqGppsVMaoqSIUSKUV85VZyowZuyv50Hd8H_E25XNHjYA5Wpi9I4xv0gUWMxmXD79bWgEqKUgmzIgb1_7fma12djdZ3CKlLnFKZSiq_sUgL5UBAA2KIpFFSOvzGSyXnFAGP2Kz8yntng"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-8 flex flex-col justify-end">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider self-start mb-4">HealthTech</span>
+<h3 class="font-headline text-3xl font-bold text-white mb-2">Lumo Health</h3>
+<p class="text-on-surface-variant line-clamp-2">Real-time patient monitoring for cardiac care units globally.</p>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="relative group cursor-pointer overflow-hidden rounded-xl bg-surface-container-low">
+<img alt="CartFlow Ecommerce" class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="Minimalist high-end ecommerce website layout with luxury product photography and smooth typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzAOq7z9SCMbRBb9t7KuJqoZY-pwI-WzVEA96fbXajf4f1eF0mvQTCuqxh2hhr_TTwqfUdTLCHXGX4f-_o6fb9gEiPuTkNm-KMzOOK-rjSgLQHepYciglNtxWjp87pE9JTxUw_ICcDkEODpt6jrpiPO_L8LHg6l9jq8DAL_sBYa0YGApSVCx84okgMMgu3RWc9qs4IYhkyOYgVFiGzF4moWqw8X8AcP8N2n2Wyj9CJK5_UtwRWQkbIo9m5rFLhg_Gt5hj0q-ozAw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent p-8 flex flex-col justify-end">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider self-start mb-4">E-Commerce</span>
+<h3 class="font-headline text-3xl font-bold text-white mb-2">CartFlow</h3>
+<p class="text-on-surface-variant line-clamp-2">Headless commerce solution that increased mobile conversion by 65%.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Our Process -->
+<section class="py-32 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold text-white mb-20 text-center">How We <span class="text-primary">Deliver</span></h2>
+<div class="relative">
+<div class="absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/20 hidden lg:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary flex items-center justify-center font-headline text-2xl font-bold text-primary mb-6 shadow-[0px_0px_20px_rgba(109,221,255,0.3)]">01</div>
+<h4 class="font-headline text-xl font-bold text-white mb-3">Discover</h4>
+<p class="text-on-surface-variant px-4">Deep diving into your business model and user pain points.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary flex items-center justify-center font-headline text-2xl font-bold text-primary mb-6 shadow-[0px_0px_20px_rgba(109,221,255,0.3)]">02</div>
+<h4 class="font-headline text-xl font-bold text-white mb-3">Design</h4>
+<p class="text-on-surface-variant px-4">Creating high-fidelity prototypes and rigorous design systems.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary flex items-center justify-center font-headline text-2xl font-bold text-primary mb-6 shadow-[0px_0px_20px_rgba(109,221,255,0.3)]">03</div>
+<h4 class="font-headline text-xl font-bold text-white mb-3">Build</h4>
+<p class="text-on-surface-variant px-4">Agile development with continuous testing and quality assurance.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border-2 border-primary flex items-center justify-center font-headline text-2xl font-bold text-primary mb-6 shadow-[0px_0px_20px_rgba(109,221,255,0.3)]">04</div>
+<h4 class="font-headline text-xl font-bold text-white mb-3">Launch</h4>
+<p class="text-on-surface-variant px-4">Global deployment, monitoring, and iterative scaling.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Testimonials -->
+<section class="py-32 max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold text-white mb-20 text-center">Voices of <span class="text-primary">Innovation</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-panel p-10 rounded-xl relative">
+<span class="material-symbols-outlined text-primary text-4xl absolute top-6 right-8 opacity-20">format_quote</span>
+<p class="text-on-surface text-lg italic mb-8 leading-relaxed">"NexCore didn't just build our app; they redefined our entire digital presence. Their attention to detail in the UX is unparalleled."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img alt="Sarah Chen" class="w-full h-full object-cover" data-alt="Professional portrait of a confident woman in a modern tech environment with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAQEJkGGW5ihrZWZoESeLh6ngnou_LWMZ6-S4wPT4A5Of2nKOkOZmIScEISB_o51kJchw5I68xkw-Hp97gUJXECI-dF3KNYIx8eGPAkj2AXbRqmrf7KSz2_B2BXUrTNR76-lW1zeitWzrMuTs7Hm3GZNc3gIaiNF-11LWzFBzfQ_AUFM_5uJk1SsnKZNCHJmTZgLAPuHzz97oQG6V_En08UFcVmKWV5P44daVBUC2_iWDVXCBwGJ57eLbNj_hKxHRa4CFn9LXXxg"/>
+</div>
+<div>
+<div class="text-white font-bold">Sarah Chen</div>
+<div class="text-primary text-xs font-label">CTO, CloudScale</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-xl relative">
+<span class="material-symbols-outlined text-primary text-4xl absolute top-6 right-8 opacity-20">format_quote</span>
+<p class="text-on-surface text-lg italic mb-8 leading-relaxed">"The engineering rigor NexCore brings to the table is what sets them apart. They delivered a complex AI integration two weeks early."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img alt="Marcus Webb" class="w-full h-full object-cover" data-alt="Professional portrait of a man with glasses smiling warmly, high-key studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK-dJuFyaCjKlT2lNY8g6SBi1y-SnZoE_8xXWVo3R4ds8CW-mq1oqI3mXr9CG13Eijh-cn-pj4BOBfyLsq4WrqHHKOJkA7lGyY_Tpy2sKr_DwjR-ytaxmxNLJL1U9GaCRNig_h6sTKIre022DWpYXqEtUKyCLudCtZttjXe3nbhf0XjgOpZePM48i_6qViHByD1S6g_M1bUelsxa9fmSy24ROfEnoM7c_XYGbdtH7wPbRvzHEwvIlQ8NanlM8JAXD7yPGG_9qnpw"/>
+</div>
+<div>
+<div class="text-white font-bold">Marcus Webb</div>
+<div class="text-primary text-xs font-label">Founder, DataPulse</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-xl relative">
+<span class="material-symbols-outlined text-primary text-4xl absolute top-6 right-8 opacity-20">format_quote</span>
+<p class="text-on-surface text-lg italic mb-8 leading-relaxed">"Switching to NexCore for our design system was the best decision we made this year. Our dev speed tripled instantly."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+<img alt="Priya Nair" class="w-full h-full object-cover" data-alt="Close up portrait of a professional woman with a clean minimal aesthetic and cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu1VaNaLS0Yjh0PyE1jLzzK1DX6guUmkYIuxbJ7_GXue73khx-N74Sy6-FiC8I8uY2j2bR-gKYBKO2hqZpEjBrErznS2eMm4sFGiCQGhvdXOgTonlaGDnR9ionwVwFiSIAlR_QyLc5iRfIWY7m4FB5aPPMA1L_yXTJubOMIzrkxApjij0oQ-PI2Vmqi7sYQX7rgx3P_6uhvCjX9r10eaeOpBEHP462HxuYP6hI5oGilImhSeYRGSFnBTiPrg0jvQ9OOTEiL3z9bw"/>
+</div>
+<div>
+<div class="text-white font-bold">Priya Nair</div>
+<div class="text-primary text-xs font-label">Product Lead, Vertex</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Team Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-8">
+<h2 class="font-headline text-4xl font-bold text-white mb-20 text-center">Meet the <span class="text-primary">Architects</span></h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="text-center group">
+<div class="w-48 h-48 rounded-full mx-auto overflow-hidden mb-6 border-4 border-transparent group-hover:border-primary transition-all duration-300">
+<img alt="Alex Mercer" class="w-full h-full object-cover grayscale group-hover:grayscale-0" data-alt="Portrait of a male tech executive in a dark shirt against a dark architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnzi3gYDAYn0vJ1G5Rne2ODvck7LeIvzEZ55Xl33ilznYZPLGVxEJQvok1oOXYwjxY5N3TuRW-DpFpS5l3X6ofjgnjrtTjh85B5pYo3foJsX_P3NAQoY3mQbH9NfI8i9OBUtPrfSWz9cUBXO1MExvd5p_p7f1CjrZB8VtMV6XZa-n_RMMm_P6XkSFlRuKd3_xO4MpNSKDZ77uv-sBh4G6EvEGr2i5lim9B-CslBLqhm73ok14U9RyPl_5AKPTzygsqoslPtlEe8Q"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-white">Alex Mercer</h4>
+<p class="text-primary font-label text-sm">CEO &amp; Systems Architect</p>
+</div>
+<div class="text-center group">
+<div class="w-48 h-48 rounded-full mx-auto overflow-hidden mb-6 border-4 border-transparent group-hover:border-primary transition-all duration-300">
+<img alt="Jamie Park" class="w-full h-full object-cover grayscale group-hover:grayscale-0" data-alt="Portrait of a female software engineer in a modern office with creative lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSyZigyNxdC0r8Hmde0qYFSTNcbc76LwFoWPZYEvAM1F19PJPm-dToOz4-IYSbDkZfpKIAF9jKKzSyc1vEiyyuS9FPjXraFtNQlrUXSKc4SDwDpQ5IpBmE4ebsK7ZDHRHzDP7AwD9POpLexLAOcK9n7GV7OwNCtxw9tbioH5KSccqRzzfvt4ab6_bsHUvcoV6ty3UiVw50EZsaTs2xMXJu-tYko8ysDJb4jugW_7_KWLq6tkmXuHe2pkb7U-bo3Lbjuj0wXjcZSA"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-white">Jamie Park</h4>
+<p class="text-primary font-label text-sm">Head of Design</p>
+</div>
+<div class="text-center group">
+<div class="w-48 h-48 rounded-full mx-auto overflow-hidden mb-6 border-4 border-transparent group-hover:border-primary transition-all duration-300">
+<img alt="Devon Rashid" class="w-full h-full object-cover grayscale group-hover:grayscale-0" data-alt="Portrait of a male developer in a tech setting with blue ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHFbvfoWJva9bnTKDYNpaKDn3ahDMcgiM7_S887-TUbq773619GpnIKYikqBNsp04PXoNc0o1KbvsVoc976NYQ1NobNeQe1vH5XVBKp62Rhq3uD7mV1HVXlKm5p2tUjfwkNJzoVE4eIJjqrpInDTd6muvbihevgxLYvVvAMZxU2FdwtPi3uvfDzSVn4mGNr2xgzqLLasJ9WyK4JDHBy4FZ0954TQdyeemt3ok7ot4rN0cZf2tq3JIsFhW41rrtDsanjqJJh3DeNQ"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-white">Devon Rashid</h4>
+<p class="text-primary font-label text-sm">VP Engineering</p>
+</div>
+<div class="text-center group">
+<div class="w-48 h-48 rounded-full mx-auto overflow-hidden mb-6 border-4 border-transparent group-hover:border-primary transition-all duration-300">
+<img alt="Sana Torres" class="w-full h-full object-cover grayscale group-hover:grayscale-0" data-alt="Portrait of a female AI researcher with a minimalist backdrop and futuristic aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrcJzq-PJb1zxmNo0FOKwsiiB6cgkmZhmikpsjaUVy8P72FsSfypQ2UQwc2ZevFAikrtRt0beVoTBMXw05KU6-oDsO88UAX-4zT6uKGP2ltqDraEtI4O-caP-OdzJZPvLTdaVgsJ1SdoI4ldx-qyXymleDHJwFuCu6KDWLv3-N06W-DhLhouLVVRXuAowHD9KODNH1ldrOUvf1KkLLDYUq2-CLnNJ1gW6vHh3PWLiniAoUAcKNQI2Z57P4D_ZGv-OxCX0zJC43Ag"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-white">Sana Torres</h4>
+<p class="text-primary font-label text-sm">AI Research Lead</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 9. Insights/Blog -->
+<section class="py-32 max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-headline text-4xl font-bold text-white">Latest <span class="text-primary">Insights</span></h2>
+<a class="text-primary font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1" href="#">View All Posts</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<article class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-xl mb-6 bg-surface-container-high">
+<img alt="AI Research" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70" data-alt="Surreal 3D render of neural networks glowing in deep blue and cyan space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQAWwjlLo4IttmCUhY0tdbR41W3icnw8XiAJSyHCuVRfW3PxJPWcDqZnDKXzqWPtTnk_48sGaIgMKLaNBV9p9FlfKBuuFSXh81BzmT_Va4RiUAFLqgJkuorgq147ykaSdke_KJZ7K5X_ZE9GwwW10FRcwK7x4tkXti8-jYIpJN61wG_B9XtymreC05zw0rUtSygy9u6kAusIKpqgB4bNxjsqeX4nY644x4OnTc8X0rqjcLnjcpRdxfyedA_2JdATCIMVSXcmZrYw"/>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-label text-primary uppercase tracking-widest">Engineering</span>
+<span class="text-xs font-label text-outline uppercase tracking-widest">5 min read</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">AI-Native Products: Moving Beyond the Wrapper</h3>
+<p class="text-on-surface-variant line-clamp-2">How we're architecting products that have intelligence baked into their core foundation rather than as an add-on.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-xl mb-6 bg-surface-container-high">
+<img alt="Design Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70" data-alt="Abstract grid of UI components and design tokens in a sleek dark mode theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDopEX5GKMiGZiOlZhvXYJLMCRFWgRBz2BDBcs607PXHIjcfefPZEVeLxV-MV17de9k8GIb6R0nxZC1AYPv13GKqsS60SNSW2Q3bP8GwLY0KjJSr0Pb1xp-MzdkBeNIXUcvDkNYsT5LHYuFAwggWP3wh9OMzOMvstht4_HaqaqD0XOf_Ed_8fqzJNQ5SaJMtdsQ-mx5bXML88do4lvbvpMYg48q-XdqzFvpJCqVWVsYhZBbmNNxxKRLILDm4ffqF7MaMegWb6Z7sg"/>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-label text-primary uppercase tracking-widest">Design</span>
+<span class="text-xs font-label text-outline uppercase tracking-widest">8 min read</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Scalable SaaS Design Systems for 2024</h3>
+<p class="text-on-surface-variant line-clamp-2">The evolution of tokens, automated handoffs, and কেন standardizing your UI accelerates feature shipping.</p>
+</article>
+<article class="group cursor-pointer">
+<div class="aspect-[16/10] overflow-hidden rounded-xl mb-6 bg-surface-container-high">
+<img alt="Scaling" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70" data-alt="Satellite view of digital connections covering the globe at night with intense cyan and white light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI1Z6wcJ7r20rOHKnbT0MsgRQLwp8McWSJ8iS6XXDT6W2Tv3yFLcIE6rXqXqsuSWfgj3LZvuVxT90mkt__1zU4pCM2z3UV4gxqQMbRxUH2AIW4sPffcyMQC1cXxzyvvgw6QXu27JYa-OhlSpsjOhytPrHGa01iuOoGmO90QhA3tWAZ2DcejxUG7JGJWd6x_uVrBqQ-cFfzP6A-eloaANC5vBypZJFRZ6JOl84I69LF9xFVaHxg9sbbmGSna1u_t7uxux20KeyDqQ"/>
+</div>
+<div class="flex items-center gap-4 mb-4">
+<span class="text-xs font-label text-primary uppercase tracking-widest">Product</span>
+<span class="text-xs font-label text-outline uppercase tracking-widest">12 min read</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Building for Global Scale from Day One</h3>
+<p class="text-on-surface-variant line-clamp-2">Infrastructure strategies that allow you to grow from 100 to 100,000 users without refactoring your codebase.</p>
+</article>
+</div>
+</section>
+<!-- 10. CTA Banner -->
+<section class="py-20 max-w-7xl mx-auto px-8">
+<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary-container p-12 md:p-24 text-center">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute -top-1/2 -left-1/4 w-[100%] h-[200%] bg-white/20 rotate-12 blur-[100px]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl font-bold text-on-primary mb-8 tracking-tighter">Ready to Build Something Great?</h2>
+<p class="text-on-primary/80 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium">Let's discuss your vision and build the digital future together.</p>
+<button class="bg-surface text-primary font-bold text-lg px-12 py-5 rounded-full hover:bg-surface-bright transition-all shadow-2xl hover:scale-105 active:scale-95">
+                    Start Your Project Today
+                </button>
+</div>
+</div>
+</section>
+<!-- 11. Footer -->
+<footer class="bg-[#090E1C] w-full pt-20 pb-10 border-t border-[#434759]/15">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+<div class="col-span-2 md:col-span-1">
+<span class="text-xl font-bold text-white mb-4 block font-headline">NexCore</span>
+<p class="font-['Manrope'] text-sm text-slate-400 max-w-xs mb-8">Engineering the next generation of digital products with precision, speed, and creative excellence.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-slate-400 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+<a class="text-slate-400 hover:text-cyan-400 transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 font-headline">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Services</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Case Studies</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Our Process</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Insights</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 font-headline">Company</h5>
+<ul class="space-y-4">
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Careers</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">GitHub</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 font-headline">Connect</h5>
+<ul class="space-y-4">
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">LinkedIn</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Twitter</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Contact</a></li>
+<li><a class="font-['Manrope'] text-sm text-slate-400 hover:text-cyan-400 transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-[#434759]/10 text-center">
+<p class="font-['Manrope'] text-sm text-slate-400">© 2024 NexCore Tech Agency. Engineered for the Future.</p>
+</div>
+</footer>
+</body></html>
